@@ -1,0 +1,14 @@
+
+allEps : linearMARS1.eps linearMARS2.eps linearMARS3.eps linearMARS4.eps linearMARS5.eps t4.eps linearMARS6.eps t.eps
+
+clean :
+	rm -f *.aux *.log *.cache *~
+
+purge :
+	rm -f *.aux *.log *.cache *~ *.eps *.pdf
+
+%.eps : %.dvi
+	dvips $< -E -o $@
+
+%.dvi : %.tex
+	latex $<

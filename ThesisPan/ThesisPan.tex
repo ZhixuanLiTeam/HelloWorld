@@ -1,0 +1,131 @@
+% !TEX program = xelatex
+\documentclass[a4paper]{report}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{CJKutf8}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{indentfirst}
+\usepackage{latexsym}
+\usepackage{mathrsfs}
+\usepackage{textcomp}
+\usepackage{url}
+%\usepackage{unicode-math}
+\usepackage{flafter}
+\usepackage{booktabs, longtable}
+\usepackage{pxfonts}
+
+\usepackage[perpage,symbol]{footmisc}
+\setfnsymbol{wiley}
+\usepackage{hypbmsec}
+\usepackage{dsfont}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage[algo2e,lined,boxed,linesnumbered]{algorithm2e}
+\usepackage{layout}
+\usepackage{tikz}
+%\usepackage{cite}
+
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+\newcommand{\Dim}{\mathrm{D}}
+\newcommand{\cond}{\mathrm{cond}}
+\newcommand{\ebold}{{\mathbf{e}}}
+\newcommand{\ibold}{\mathbf{i}}
+\newcommand{\jbold}{\mathbf{j}}
+\newcommand{\avg}[1]{\left\langle #1 \right\rangle}
+\newcommand{\dif}{\mathrm{d}}
+\newcommand{\Lapl}{{\mathbf{L}}}
+%==============================================================
+%==============================================================
+\begin{document}
+	\begin{CJK*}{UTF8}{gkai}
+		\CJKindent
+ 
+ %------------中文设置--------------------------
+ \makeatletter %将文献引用作为上标出现,增加括号，
+ \def\@cite#1#2{\textsuperscript{[{#1\if@tempswa , #2\fi}]}}
+ \makeatother
+ \newtheorem{thm}{{定理}}[chapter]
+ \newtheorem{lem}[thm]{{引理}}
+ \newtheorem{defn}[thm]{{定义}}
+ \newtheorem{prop}[thm]{{命题}}
+ \newtheorem{cor}[thm]{{推论}}
+ \newtheorem{exm}{{例}}[chapter]
+ \newtheorem{rem}[exm]{{注}}
+ \newtheorem*{pro}{证明}
+ %\newtheorem{prop}{{命题}}[chapter]
+ 
+ \renewcommand{\bibname}{\centerline{参考文献}}
+ \renewcommand{\tablename}{表}
+ %\renewcommand{\captionlabeldelim}{\quad}
+ %===================Image settings========================%
+ \renewcommand{\figurename}{图}
+ 
+
+ \title{三维界面追踪的线性MARS方法}
+ \author{潘瑛芝}
+ \date{}
+ \maketitle
+ 
+  %\newpage
+  %序言
+  %\input{preface} % 请根据需要取舍。
+  %中文摘要
+  \input{sec/absc}
+
+  %英文摘要
+  \input{sec/abse}
+
+%==============================================================
+%这部分不需要自己修改。
+
+
+  %插图和附表清单
+  %\listoffigures
+  %\chaptermark{图目录}
+  %\addcontentsline{toc}{chapter}{图目录}
+  %\listoftables
+  %\chaptermark{表目录}
+  %\addcontentsline{toc}{chapter}{表目录}
+  %术语表
+  % \printnomenclature
+  % \chaptermark{术语表}
+  %目次页
+  %\tableofcontents
+  %\addtocontents{toc}{\protect\chaptermark{目录}}
+  %\addtocontents{toc}{\protect\contentsline {chapter}{\protect\makebox[\linewidth]{目录\hfill}\vspace{-2em}}{}}
+  %\mainmatter
+
+%==============================================================
+
+ \input{sec/chapter1}%introduction
+  \input{sec/chapter2}%literature
+  \input{sec/chapter3}
+  \input{sec/chapter4}
+  \input{sec/chapter5}
+%==============================================================
+%这也是个不需要自己修改的部分。
+
+  %\backmatter %结束章节自动编号
+
+
+%参考文献（习惯使用bibtex的可以修改）
+%  \addcontentsline{toc}{chapter}{参考文献} % 解决目录中没有相应的参考文献的条目问题
+%  \chaptermark{参考文献}
+%  \bibliographystyle{acmmod}
+  \bibliographystyle{abbrv}
+  \bibliography{bib/ThesisPan}
+  
+\end{CJK*}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
